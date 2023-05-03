@@ -9,7 +9,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<ViewPager2>(R.id.pager)?.adapter = PagerAdapter(this)
+        findViewById<ViewPager2>(R.id.pager)?.apply {
+            offscreenPageLimit = 1
+            adapter = PagerAdapter(this@MainActivity)
+        }
 
     }
 
